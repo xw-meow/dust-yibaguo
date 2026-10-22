@@ -1,0 +1,34 @@
+{
+  "name": "yibaguo-theory1-cards",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "validate:data": "tsx scripts/validate-data.ts",
+    "check": "tsc -b && npm run validate:data && npm run validate:deduction && npm run validate:license",
+    "validate:deduction": "tsx scripts/validate-deduction.ts",
+    "validate:deduction-part": "tsx scripts/validate-deduction-part.ts",
+    "validate:license": "tsx scripts/validate-license.ts",
+    "validate:license-part": "tsx scripts/validate-license-part.ts"
+  },
+  "dependencies": {
+    "motion": "^14.4.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  },
+  "description": "一把过 · 科目一卡片训练场：卡片学习 + 十题挑战 + 成就系统（Vite + React + Motion）"
+}

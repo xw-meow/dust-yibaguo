@@ -1,0 +1,367 @@
+/* ---------- 成就页：全局成就墙 ---------- */
+
+.ach-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.ach-page__bar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 -18px;
+  padding: calc(10px + env(safe-area-inset-top, 0px)) 18px 12px;
+  background: var(--paper);
+}
+
+.ach-page__back {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 10px 22px -22px rgba(10, 30, 58, 0.7);
+  transition:
+    border-color 0.18s,
+    color 0.18s,
+    transform 0.18s;
+}
+
+.ach-page__back:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateX(-2px);
+}
+
+.ach-page__bar h1 {
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.ach-page__total {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  padding: 6px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.ach-page__total b {
+  font-family: var(--font-num);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.ach-page__total i {
+  font-style: normal;
+  color: var(--ink-3);
+}
+
+/* 总进度 */
+.ach-wall-summary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 4px;
+  padding: 18px;
+  border-radius: 26px;
+  background: var(--ink);
+  color: #fff;
+  box-shadow: 0 28px 56px -40px rgba(10, 30, 58, 0.95);
+}
+
+.ach-wall-summary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 88% -12%, rgba(242, 247, 160, 0.2), transparent 52%),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size:
+    auto,
+    26px 26px,
+    26px 26px;
+}
+
+.ach-wall-summary__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.ach-wall-summary__top svg {
+  color: var(--lime);
+}
+
+.ach-wall-summary__value {
+  margin-top: 8px;
+  font-family: var(--font-num);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ach-wall-summary__value span {
+  margin-left: 2px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ach-wall-summary__bar {
+  height: 5px;
+  margin-top: 16px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ach-wall-summary__bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--lime);
+  transition: width 0.6s var(--ease-out);
+}
+
+/* 分组 */
+.ach-wall-groups {
+  padding-bottom: 8px;
+}
+
+.ach-wall-group {
+  margin-top: 24px;
+}
+
+.ach-wall-group__head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 2px 11px;
+}
+
+.ach-wall-group__glyph {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(10, 30, 58, 0.06);
+  border-radius: 9px;
+  background: var(--cat-tint);
+  color: var(--cat-deep);
+}
+
+.ach-wall-group__head h2 {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.ach-wall-group__count {
+  margin-left: auto;
+  font-family: var(--font-num);
+  font-size: 11px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.ach-wall-group__count b {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.ach-wall-group__count i {
+  font-style: normal;
+}
+
+/* 手机端：紧凑的两列徽章 */
+.ach-wall-group__grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  padding: 0;
+}
+
+.ach-wall-group .ach-badge {
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.ach-wall-group .ach-badge__medal {
+  width: 40px;
+  height: 40px;
+}
+
+.ach-wall-group .ach-badge__medal svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ach-wall-group .ach-badge h3 {
+  padding-right: 6px;
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+.ach-wall-group .ach-badge__desc {
+  display: -webkit-box;
+  margin-top: 2px;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.ach-wall-group .ach-badge__progress {
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.ach-wall-group .ach-badge__count {
+  font-size: 9px;
+}
+
+.ach-wall-group .ach-badge__lock {
+  top: 10px;
+  right: 10px;
+  width: 11px;
+  height: 11px;
+}
+
+/* 平板 / 桌面：三列，横向徽章 */
+@media (min-width: 720px) {
+  .ach-page {
+    padding: 0 24px;
+  }
+
+  .ach-page__bar {
+    margin: 0 -24px;
+    padding: calc(16px + env(safe-area-inset-top, 0px)) 24px 14px;
+  }
+
+  .ach-page__bar h1 {
+    font-size: 24px;
+  }
+
+  .ach-wall-summary {
+    margin-top: 8px;
+    padding: 22px 24px;
+    border-radius: 28px;
+  }
+
+  .ach-wall-summary__value {
+    font-size: 56px;
+  }
+
+  .ach-wall-summary__value span {
+    font-size: 19px;
+  }
+
+  .ach-wall-group {
+    margin-top: 28px;
+  }
+
+  .ach-wall-group__head h2 {
+    font-size: 18px;
+  }
+
+  .ach-wall-group__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .ach-wall-group .ach-badge {
+    flex-direction: row;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .ach-wall-group .ach-badge__medal {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ach-wall-group .ach-badge__medal svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .ach-wall-group .ach-badge h3 {
+    padding-right: 10px;
+    font-size: 13.5px;
+  }
+
+  .ach-wall-group .ach-badge__desc {
+    font-size: 10.5px;
+  }
+
+  .ach-wall-group .ach-badge__count {
+    font-size: 10px;
+  }
+
+  .ach-wall-group .ach-badge__lock {
+    top: 12px;
+    right: 12px;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (max-width: 379px) {
+  .ach-page {
+    padding: 0 14px;
+  }
+
+  .ach-page__bar {
+    margin: 0 -14px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .ach-page__bar h1 {
+    font-size: 20px;
+  }
+
+  .ach-wall-group__grid {
+    gap: 8px;
+  }
+
+  .ach-wall-group .ach-badge {
+    padding: 11px;
+  }
+}
