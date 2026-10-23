@@ -66,9 +66,11 @@ function CategoryTile({ category, stats, wide }: CategoryTileProps) {
     >
       <div className="cat-tile__top">
         <h3>{category.name}</h3>
-        <span className="cat-tile__arrow" aria-hidden="true">
-          <IconArrowRight size={14} />
-        </span>
+        <IconArrowRight
+          size={24}
+          strokeWidth={3}
+          className="cat-tile__arrow"
+        />
       </div>
 
       <span className="cat-tile__mark" aria-hidden="true">
@@ -149,7 +151,7 @@ export function HomePage() {
                 title="清空全部学习进度"
                 onClick={() => setResetOpen(true)}
               >
-                <IconTrash size={15} />
+                <IconTrash size={17} />
               </button>
             </div>
           </motion.header>
