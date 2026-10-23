@@ -332,30 +332,6 @@ body.no-page-scroll .page-wrap {
   max-width: 680px;
 }
 
-.footer-reset {
-  color: var(--ink-3);
-  font-size: 11.5px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  white-space: nowrap;
-}
-
-.footer-reset:hover {
-  color: var(--danger);
-}
-
-.footer-reset--danger {
-  color: var(--danger);
-  font-weight: 700;
-}
-
-.footer-reset-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
 /* ---------- 工具类 ---------- */
 
 .hint-text {
